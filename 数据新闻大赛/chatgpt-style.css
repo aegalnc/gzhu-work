@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #788F8E; 
+    /* background-color: #7182E1; */
+}
+#hamnav {
+   background-color: rgba(255, 255, 255, 0.4);
+   height: 30px;
+   width: 30px;
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+}
+
+#hamnav label {
+    color: #D9CFC3;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    font-size: large;
+    animation: nav-down 1s forwards;
+}
+
+@keyframes nav-down {
+    0% {
+        transform: translate(0, -50px);
+    }
+}
+
+.chat-container {
+    height: 80vh;
+    width: 80vw;
+    background-color: #343541;
+    position: relative;
+    top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px black;
+    opacity: 0.3;
+}
+
+.chat-header {
+    background-color: #343541;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D4D1D3;
+    border-bottom: #2E2F37 solid 1.5px;
+}
+
+
+/* 渲染对话框 */
+.chat-messages {
+    width: 100%;
+    height: 80%;
+}
+
+.user-message-container {
+    width: 100%;
+    border-bottom: solid 1.5px #2E2F37;
+    position: relative;
+    display: flex;
+}
+
+.user-avatar {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    width: 30px;
+    height: 30px;
+}
+.user-message {
+    margin: 0 0 20px 0;
+    padding: 24px 0px 0 110px;
+    width: 70%;
+    white-space: pre-wrap; 
+    font-size: large;
+    line-height: 1.5;
+    color: #ADABB5;
+}
+
+.chatgpt-message-container {
+    width: 98%;
+    background-color: #434654;
+    position: relative;
+    display: flex;
+}
+
+.chatgpt-avatar {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: 60px;
+}
+.chatgpt-message {
+    white-space: pre-wrap;
+    margin: 24px 0 30px 110px;
+    color: #CDCCD0;
+    font-size: large;
+    line-height: 1.5;
+}
+.title {
+    color: #CDCCD0;
+    font-size: large;
+}
+.magnify {
+    animation: magnify 3s forwards;
+}
+
+@keyframes magnify {
+    to {
+        font-size: 1.2em;
+    }
+}
+
+.cursor-container {
+    width: 3%;
+    height: 5%;
+    
+    position: absolute;
+    
+}
+
+.chat-input {
+    position: absolute;
+    bottom: 3%;
+    height: 13%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: #40414F;
+    border-radius: 20px;
+    border: 1.5px solid #2E2F37;
+}
+.input-message {
+    width: 70%;
+    height: 9%;
+    position: absolute;
+    bottom: 35%; 
+    left: 5%;
+    color: #838597;
+}
+.send-button {
+    position: absolute; 
+    bottom: 27%; 
+    left: 90%;
+    background-image: url("send-button.png");
+    height: 51%;
+    width: 7%;
+    background-color: #40414F;
+    border: none;
+    background-size: cover;
+}
+.flash {
+    animation: flash 1s forwards;
+}
+
+.cursor {
+    width: 7%;
+    height: 50%;
+    animation: move 5s infinite forwards;
+    animation-iteration-count: 1;
+    position: absolute;  
+}
+
+@keyframes move {
+    0% {
+        top: -30%;
+        left: 90%
+    }
+    85% {
+        top: 45%;
+        left: 3%;
+        filter: brightness(1);
+    }
+    88% {
+        top: 45%;
+        left: 3%;
+        filter: brightness(0.5);
+    }
+    91% {
+        top: 45%;
+        left: 3%;
+        fliter: brightness(1);
+    }
+    100% {
+        top: 75%;
+        left: 3%;
+        fliter: brightness(1);
+    } 
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+/* .cover { 
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+}
+.title {
+    font-size: 10em;
+    color: white;
+    text-align: center;
+}
+*/
+.map {
+    position: absolute;
+    width: 100vw;
+    z-index: 20;
+}
+.map-svg {
+    height: 100%;
+    width: 100%;
+}
